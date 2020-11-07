@@ -13,6 +13,6 @@
 <img src='screenshots/2.png'>
 <img src='screenshots/3.png'>
 <p>
-<img src='screenshots/4.png' width='450'/> 
-<img src='screenshots/5.png' width='450'/>
+<img src='screenshots/4.png' width='400'/> 
+<img src='screenshots/5.png' width='400'/>
 </p>
