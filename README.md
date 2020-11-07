@@ -9,6 +9,18 @@
 ## Enjoy and Keep Travelling with us.
 <br />
 
+<br />
+
+## Technoligies Used:
+<ul>
+  <li>Framework: django</li>
+  <li>Database: MySQL</li>
+  <li>Security: Argon2 password hashing</li>
+  <li>CRUD functionality</li>
+</ul>
+
+<br />
+
 <img src='screenshots/1.png'>
 <img src='screenshots/2.png'>
 <img src='screenshots/3.png'>
