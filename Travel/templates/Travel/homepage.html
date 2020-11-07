@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_body %}
+
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static "images/tajmahal.jpg" %}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static "images/red-building.jpg" %}" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static "images/temple.jpg" %}" alt="Third slide">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static "images/india-gate.jpg" %}" alt="Third slide">
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="container">
+        <h2 class="text-center display-6 popular">
+          Popular Places to visit
+        </h2>
+
+        <hr>
+
+        <div class="card-columns">
+            {% for dest in destination_list %}
+            <div class="card bg-light">
+                <img src="{{ dest.image.url }}" class="card-img-top" alt="dest {{ forloop.counter }}">
+                {% if dest.offer %}
+                    <div class="spec_offer text-center">Special Offer</div>
+                {% endif %}
+                <div class="card-body" style="height: 105px">
+                    <h5 class="card-title">{{ dest.name }}</h5>
+                    <p class="card-text">{{ dest.title }}</p>
+                </div>
+                <div class="card-footer">
+                    <p class="card-text"><small class="text-muted">Starting: <span class="fa fa-inr"></span>{{ dest.price }}</small></p>
+                    <a type="button" class="btn btn-primary" href="{{ dest.get_absolute_url }}">View</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="background">
+        <img src="{% static "images/background.jpg" %}" class="mx-auto d-block w-100 rounded">
+        <h4 class="text-center">THE WORLD IS A BOOK AND THOSE WHO DO NOT TRAVEL READ ONLY A PAGE.</h4>
+    </div>
+    
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h4>Travel-Guide</h4>
+                    <hr class="light">
+                    <p>555-555-555</p>
+                    <p>support@email.com</p>
+                    <p>India, Punjab , 144022</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Our Hours</h5>
+                    <hr class="light">
+                    <p>Mon-Fri : 9am - 5pm</p>
+                    <p>Sat-Sun : 9am - 3pm</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Service Area</h5>
+                    <hr class="light">
+                    <p>Pune</p>
+                    <p>Mumbai</p>
+                    <p>Lucknow</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-bottom">
+                    <h5 style="padding-bottom: 1em">&copy; Travel-Guide</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}

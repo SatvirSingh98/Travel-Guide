@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for detail in destination.place.all %}
+        <div class="container-fluid">
+            <p class="lead">{{ detail.description }}</p>
+            <img src="{{ detail.place_images.url }}" class="rounded img-fluid">
+        </div>
+    {% empty %}
+        <p class="lead jumbotron">No content to show</p>
+    {% endfor %}
+{% endblock %}
